@@ -94,3 +94,7 @@ C:\Users\prana\tiy\week-6\day-5\WannabeReddit\WannabeReddit\bin\Microsoft.AI.Web
 C:\Users\prana\tiy\week-6\day-5\WannabeReddit\WannabeReddit\obj\Debug\WannabeReddit.csprojResolveAssemblyReference.cache
 C:\Users\prana\tiy\week-6\day-5\WannabeReddit\WannabeReddit\obj\Debug\WannabeReddit.dll
 C:\Users\prana\tiy\week-6\day-5\WannabeReddit\WannabeReddit\obj\Debug\WannabeReddit.pdb
+C:\Users\prana\tiy\week-6\day-5\WannabeReddit\WannabeReddit\obj\Debug\WannabeReddit.Migrations.MadePostClass.resources
+C:\Users\prana\tiy\week-6\day-5\WannabeReddit\WannabeReddit\obj\Debug\WannabeReddit.csproj.GenerateResource.Cache
+C:\Users\prana\tiy\week-6\day-5\WannabeReddit\WannabeReddit\obj\Debug\WannabeReddit.Migrations.ActuallyMadeTable.resources
+C:\Users\prana\tiy\week-6\day-5\WannabeReddit\WannabeReddit\obj\Debug\WannabeReddit.Migrations.MadeListOfPosts.resources

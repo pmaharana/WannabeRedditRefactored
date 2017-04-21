@@ -1,31 +1,91 @@
-﻿@{
+﻿@model IEnumerable<WannabeReddit.Models.Post>
+
+@{
     ViewBag.Title = "Home Page";
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>Wannabe Reddit Clone</h1>
+    <p class="lead">Welcome to the redditt knock-off</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">New account &raquo;</a></p>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+<div class="container">
+
+    <ul class="list-group">
+        <li class="list-group-item active"><strong>Top posts</strong></li>
+
+       @foreach (var item in Model)
+       {
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="/Images/doublezero.jpg" alt="Darts" class="img-thumbnail img-responsive">
+                </div>
+                <div class="col-md-10">
+                    <strong>@item.Title</strong>
+                    <p>@item.Body</p>
+                </div>
+
+            </div>
+        </li>
+       }
+
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="/Images/doublezero.jpg" alt="Darts" class="img-thumbnail img-responsive">
+                    </div>
+                    <div class="col-md-10">
+                        <strong>First Day of C#</strong>
+                        <p>It was been of my best day yet. I was able to keep up with the content in class and complete the level 3 assignment!  </p>
+                    </div>
+                    
+                </div>
+            </li>
+
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="/Images/doublezero.jpg" alt="Darts" class="img-thumbnail img-responsive">
+                </div>
+                <div class="col-md-10">
+                    <strong>First Day of C#</strong>
+                    <p>It was been of my best day yet. I was able to keep up with the content in class and complete the level 3 assignment!  </p>
+                </div>
+
+            </div>
+        </li>
+
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="/Images/doublezero.jpg" alt="Darts" class="img-thumbnail img-responsive">
+                </div>
+                <div class="col-md-10">
+                    <strong>First Day of C#</strong>
+                    <p>It was been of my best day yet. I was able to keep up with the content in class and complete the level 3 assignment!  </p>
+                </div>
+
+            </div>
+        </li>
+        
+
+        <li class="list-group-item disabled">
+            <div class=" text-center">
+                <ul class="pagination">
+                    <li><a href="#">&laquo;</a></li>
+                    <li><a href="#">1</a></li>
+                    <li class="active"><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">&raquo;</a></li>
+                </ul>
+            </div>
+
+
+        </li>
+    </ul>
+</div>
 </div>

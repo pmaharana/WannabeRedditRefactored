@@ -29,5 +29,7 @@ namespace WannabeReddit.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Post> Posts { get; set; }
     }
 }
