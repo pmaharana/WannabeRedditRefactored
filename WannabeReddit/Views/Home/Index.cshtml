@@ -7,70 +7,40 @@
 <div class="jumbotron">
     <h1>Wannabe Reddit Clone</h1>
     <p class="lead">Welcome to the redditt knock-off</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">New account &raquo;</a></p>
+    
 </div>
 
 <div class="container">
 
     <ul class="list-group">
-        <li class="list-group-item active"><strong>Top posts</strong></li>
+        <li class="list-group-item active"> 
+        <div class="row">
+          <div class ="col-md-8"><strong>Top posts</strong></div>
+            <div class="col-md-4">@Html.ActionLink("Create Post", "Create", "Posts", null, new { @class = "btn btn-primary btn-lg &raquo" })</div>
+           </div>
+        </li>
+
 
        @foreach (var item in Model)
        {
         <li class="list-group-item">
             <div class="row">
                 <div class="col-md-2">
-                    <img src="/Images/doublezero.jpg" alt="Darts" class="img-thumbnail img-responsive">
+                    <img src="/Images/doublezero.jpg" alt="gundamu" class="img-thumbnail img-responsive">
                 </div>
                 <div class="col-md-10">
                     <strong>@item.Title</strong>
                     <p>@item.Body</p>
+                    <p>Total Upvotes @item.UpVotes <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></p>
                 </div>
 
             </div>
         </li>
        }
 
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="col-md-2">
-                        <img src="/Images/doublezero.jpg" alt="Darts" class="img-thumbnail img-responsive">
-                    </div>
-                    <div class="col-md-10">
-                        <strong>First Day of C#</strong>
-                        <p>It was been of my best day yet. I was able to keep up with the content in class and complete the level 3 assignment!  </p>
-                    </div>
-                    
-                </div>
-            </li>
-
-        <li class="list-group-item">
-            <div class="row">
-                <div class="col-md-2">
-                    <img src="/Images/doublezero.jpg" alt="Darts" class="img-thumbnail img-responsive">
-                </div>
-                <div class="col-md-10">
-                    <strong>First Day of C#</strong>
-                    <p>It was been of my best day yet. I was able to keep up with the content in class and complete the level 3 assignment!  </p>
-                </div>
-
-            </div>
-        </li>
-
-        <li class="list-group-item">
-            <div class="row">
-                <div class="col-md-2">
-                    <img src="/Images/doublezero.jpg" alt="Darts" class="img-thumbnail img-responsive">
-                </div>
-                <div class="col-md-10">
-                    <strong>First Day of C#</strong>
-                    <p>It was been of my best day yet. I was able to keep up with the content in class and complete the level 3 assignment!  </p>
-                </div>
-
-            </div>
-        </li>
+    
         
-
+        
         <li class="list-group-item disabled">
             <div class=" text-center">
                 <ul class="pagination">
@@ -87,5 +57,4 @@
 
         </li>
     </ul>
-</div>
 </div>
