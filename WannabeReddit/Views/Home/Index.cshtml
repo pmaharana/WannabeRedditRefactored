@@ -1,4 +1,6 @@
 ﻿@model IEnumerable<WannabeReddit.Models.Post>
+@using Microsoft.AspNet.Identity
+@using WannabeReddit.Models;
 
 @{
     ViewBag.Title = "Home Page";
@@ -16,11 +18,10 @@
         <li class="list-group-item active"> 
         <div class="row">
           <div class ="col-md-8"><strong>Top posts</strong></div>
-            @if (HttpContext.Current.User.Identity.IsAuthenticated)
-            {
+            
 
             <div class="col-md-4">@Html.ActionLink("Create Post", "Create", "Posts", null, new { @class = "btn btn-primary btn-lg &raquo" })</div>
-            }
+            
            </div>
         </li>
 
@@ -33,7 +34,32 @@
                     <img src="/Images/doublezero.jpg" alt="gundamu" class="img-thumbnail img-responsive">
                 </div>
                 <div class="col-md-10">
-                    <strong>@item.Title</strong>
+                    
+                @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                {
+                    ApplicationDbContext db = new ApplicationDbContext();
+                    //var users = db.Users.ToList();
+                    //var theUser = users.Where(w => w.Id == item.UserId).Select(s => s.UserName);
+                    //var answer = "";
+                    //foreach (var x in theUser)
+                    //{
+                    //    answer += x;
+                    //}
+                    if (item.UserId != null)
+                    {
+
+                        var users = db.Users.First(f => f.Id == item.UserId);
+                        <p>post made by @users.UserName</p>
+                    }
+                    else
+                    {
+                        <p>no username</p>
+                    }
+
+
+                }
+                    
+                    <p><strong>@item.Title</strong></p>
                     <p>@item.Body</p>
                     <p>Total Upvotes @item.UpVotes <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></p>
                 </div>
