@@ -38,6 +38,8 @@
                 @if (HttpContext.Current.User.Identity.IsAuthenticated)
                 {
                     ApplicationDbContext db = new ApplicationDbContext();
+
+                    //another way to do this
                     //var users = db.Users.ToList();
                     //var theUser = users.Where(w => w.Id == item.UserId).Select(s => s.UserName);
                     //var answer = "";
@@ -55,11 +57,14 @@
                     {
                         <p>no username</p>
                     }
-
-
                 }
+                    @{ DateTime result = Convert.ToDateTime(item.DatePosted);
+                        string formattedDate = result.ToShortDateString();   
+                            }
+
+               
                     
-                    <p><strong>@item.Title</strong></p>
+                    <p><strong>@item.Title</strong></p> <span> posted on @formattedDate</span>
                     <p>@item.Body</p>
                     <p>Total Upvotes @item.UpVotes <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></p>
                 </div>
@@ -75,11 +80,11 @@
             <div class=" text-center">
                 <ul class="pagination">
                     <li><a href="#">&laquo;</a></li>
-                    <li><a href="#">1</a></li>
-                    <li class="active"><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
+                    <li><a href="~/Home/Index?pageIndex=1">1</a></li>
+                    <li><a href="~/Home/Index?pageIndex=2">2</a></li>
+                    <li><a href="~/Home/Index?pageIndex=3">3</a></li>
                     <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
+                    <li class="active"><a href="#">5</a></li>
                     <li><a href="#">&raquo;</a></li>
                 </ul>
             </div>

@@ -13,10 +13,14 @@ namespace WannabeReddit.Controllers
         public ApplicationDbContext db = new ApplicationDbContext();
 
 
-        public ActionResult Index()
+        public ActionResult Index(int pageIndex = 1, int pageSize = 3)
         {
-         
-            var posts = new PostServices().GetAllPosts();
+
+            var posts = db.Posts
+                .OrderByDescending(o => o.DatePosted)
+                .Skip((pageIndex - 1) * pageSize).
+                Take(pageSize).ToList();
+
             return View(posts);
         }
 
