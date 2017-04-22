@@ -98,3 +98,4 @@ C:\Users\prana\tiy\week-6\day-5\WannabeReddit\WannabeReddit\obj\Debug\WannabeRed
 C:\Users\prana\tiy\week-6\day-5\WannabeReddit\WannabeReddit\obj\Debug\WannabeReddit.csproj.GenerateResource.Cache
 C:\Users\prana\tiy\week-6\day-5\WannabeReddit\WannabeReddit\obj\Debug\WannabeReddit.Migrations.ActuallyMadeTable.resources
 C:\Users\prana\tiy\week-6\day-5\WannabeReddit\WannabeReddit\obj\Debug\WannabeReddit.Migrations.MadeListOfPosts.resources
+C:\Users\prana\tiy\week-6\day-5\WannabeReddit\WannabeReddit\obj\Debug\WannabeReddit.Migrations.Tablechanges.resources

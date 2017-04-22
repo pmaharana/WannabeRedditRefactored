@@ -36,6 +36,7 @@ namespace WannabeReddit.Controllers
         }
 
         // GET: Posts/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -46,7 +47,7 @@ namespace WannabeReddit.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Body,UpVotes,DownVotes,UserId")] Post post)
+        public ActionResult Create([Bind(Include = "Id,Title,Body,UpVotes,DownVotes,DatePosted,UserId")] Post post)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +79,7 @@ namespace WannabeReddit.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,Body,UpVotes,DownVotes,UserId")] Post post)
+        public ActionResult Edit([Bind(Include = "Id,Title,Body,UpVotes,DownVotes,DatePosted,UserId")] Post post)
         {
             if (ModelState.IsValid)
             {

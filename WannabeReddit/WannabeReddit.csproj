@@ -207,6 +207,10 @@
     <Compile Include="Migrations\201704212201520_MadeListOfPosts.Designer.cs">
       <DependentUpon>201704212201520_MadeListOfPosts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704221607488_Tablechanges.cs" />
+    <Compile Include="Migrations\201704221607488_Tablechanges.Designer.cs">
+      <DependentUpon>201704221607488_Tablechanges.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -274,6 +278,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Posts\Create.cshtml" />
+    <Content Include="Views\Posts\Delete.cshtml" />
+    <Content Include="Views\Posts\Details.cshtml" />
+    <Content Include="Views\Posts\Edit.cshtml" />
+    <Content Include="Views\Posts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -303,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704212201520_MadeListOfPosts.resx">
       <DependentUpon>201704212201520_MadeListOfPosts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704221607488_Tablechanges.resx">
+      <DependentUpon>201704221607488_Tablechanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

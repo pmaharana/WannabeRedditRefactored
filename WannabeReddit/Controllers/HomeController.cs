@@ -15,6 +15,7 @@ namespace WannabeReddit.Controllers
 
         public ActionResult Index()
         {
+         
             var posts = new PostServices().GetAllPosts();
             return View(posts);
         }

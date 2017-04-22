@@ -14,6 +14,7 @@ namespace WannabeReddit.Models
         public int? DownVotes { get; set; }
         public DateTime? DatePosted { get; set; } = DateTime.Now;
 
+
         public int? UserId { get; set; }
         public ApplicationUser User { get; set; }
     }
