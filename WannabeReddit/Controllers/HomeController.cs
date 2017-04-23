@@ -20,8 +20,27 @@ namespace WannabeReddit.Controllers
                 .OrderByDescending(o => o.DatePosted)
                 .Skip((pageIndex - 1) * pageSize).
                 Take(pageSize).ToList();
-
+            ViewBag.Pagenumber = pageIndex;
             return View(posts);
+        }
+
+
+        public ActionResult CountUp(int? id)
+        {
+            var count = db.Posts.First(f => f.Id == id);
+            count.UpVotes++;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
+
+        public ActionResult CountDown(int? id)
+        {
+            var count = db.Posts.First(f => f.Id == id);
+            count.DownVotes++;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
         }
 
         public ActionResult About()

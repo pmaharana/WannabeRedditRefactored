@@ -59,6 +59,9 @@ namespace WannabeReddit.Controllers
             return View(post);
         }
 
+ 
+
+
         // GET: Posts/Edit/5
         public ActionResult Edit(int? id)
         {

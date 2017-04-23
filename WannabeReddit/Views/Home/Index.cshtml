@@ -66,7 +66,12 @@
                     
                     <p><strong>@item.Title</strong></p> <span> posted on @formattedDate</span>
                     <p>@item.Body</p>
-                    <p>Total Upvotes @item.UpVotes <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></p>
+                    @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                    {
+                        <p>Total Upvotes @item.UpVotes <a href="~/Home/CountUp?id=@item.Id"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a></p>
+                        <p>Total Downvotes @item.DownVotes <a href="~/Home/CountDown?id=@item.Id"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></p>
+                    }
+                    
                 </div>
 
             </div>
@@ -80,11 +85,21 @@
             <div class=" text-center">
                 <ul class="pagination">
                     <li><a href="#">&laquo;</a></li>
-                    <li><a href="~/Home/Index?pageIndex=1">1</a></li>
-                    <li><a href="~/Home/Index?pageIndex=2">2</a></li>
-                    <li><a href="~/Home/Index?pageIndex=3">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li class="active"><a href="#">5</a></li>
+                    @for (int i = 1; i < 6; i++)
+                    {
+                        if (ViewBag.PageNumber == i)
+                        {
+                            <li class="active"><a href="~/Home/Index?pageIndex=@i">@i</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="~/Home/Index?pageIndex=@i">@i</a></li>
+                        }
+                    }
+                 
+
+                   
+                    
                     <li><a href="#">&raquo;</a></li>
                 </ul>
             </div>
