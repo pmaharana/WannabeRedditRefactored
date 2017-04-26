@@ -9,33 +9,33 @@
 <div class="jumbotron">
     <h1>Wannabe Reddit Clone</h1>
     <p class="lead">Welcome to the redditt knock-off</p>
-    
+
 </div>
 
 <div class="container">
 
     <ul class="list-group">
-        <li class="list-group-item active"> 
-        <div class="row">
-          <div class ="col-md-8"><strong>Top posts</strong></div>
-            
+        <li class="list-group-item active">
+            <div class="row">
+                <div class="col-md-8"><strong>Top posts</strong></div>
 
-            <div class="col-md-4">@Html.ActionLink("Create Post", "Create", "Posts", null, new { @class = "btn btn-primary btn-lg &raquo" })</div>
-            
-           </div>
+
+                <div class="col-md-4">@Html.ActionLink("Create Post", "Create", "Posts", null, new { @class = "btn btn-primary btn-lg &raquo" })</div>
+
+            </div>
         </li>
 
 
-       @foreach (var item in Model)
-       {
-        <li class="list-group-item">
-            <div class="row">
-                <div class="col-md-2">
-                    <img src="/Images/doublezero.jpg" alt="gundamu" class="img-thumbnail img-responsive">
-                </div>
-                <div class="col-md-10">
-                    
-                @if (HttpContext.Current.User.Identity.IsAuthenticated)
+        @foreach (var item in Model)
+        {
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="/Images/doublezero.jpg" alt="gundamu" class="img-thumbnail img-responsive">
+                    </div>
+                    <div class="col-md-8">
+
+                        @if (HttpContext.Current.User.Identity.IsAuthenticated)
                 {
                     ApplicationDbContext db = new ApplicationDbContext();
 
@@ -51,36 +51,37 @@
                     {
 
                         var users = db.Users.First(f => f.Id == item.UserId);
-                        <p>post made by @users.UserName</p>
-                    }
-                    else
-                    {
-                        <p>no username</p>
-                    }
-                }
-                    @{ DateTime result = Convert.ToDateTime(item.DatePosted);
-                        string formattedDate = result.ToShortDateString();   
+                                <p>post made by @users.UserName</p>
+                            }
+                            else
+                            {
+                                <p>no username</p>
+                            }
+                        }
+                        @{ DateTime result = Convert.ToDateTime(item.DatePosted);
+                            string formattedDate = result.ToShortDateString();
+                        }
+
+
+
+                        <p><strong>@item.Title</strong></p> <span> posted on @formattedDate</span>
+                        <p>@item.Body</p>
+                        @if (HttpContext.Current.User.Identity.IsAuthenticated)
+                        {
+                            <div class="col-md-4" id="voteContainer-@item.Id">
+                                @Html.Partial("_voteBlock", item)
+                            </div>
+                        }
+
+                    </div>
+
+                </div>
+            </li>
                             }
 
-               
-                    
-                    <p><strong>@item.Title</strong></p> <span> posted on @formattedDate</span>
-                    <p>@item.Body</p>
-                    @if (HttpContext.Current.User.Identity.IsAuthenticated)
-                    {
-                        <p>Total Upvotes @item.UpVotes <a href="~/Home/CountUp?id=@item.Id"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a></p>
-                        <p>Total Downvotes @item.DownVotes <a href="~/Home/CountDown?id=@item.Id"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></p>
-                    }
-                    
-                </div>
 
-            </div>
-        </li>
-       }
 
-    
-        
-        
+
         <li class="list-group-item disabled">
             <div class=" text-center">
                 <ul class="pagination">
@@ -96,10 +97,10 @@
                             <li><a href="~/Home/Index?pageIndex=@i">@i</a></li>
                         }
                     }
-                 
 
-                   
-                    
+
+
+
                     <li><a href="#">&raquo;</a></li>
                 </ul>
             </div>

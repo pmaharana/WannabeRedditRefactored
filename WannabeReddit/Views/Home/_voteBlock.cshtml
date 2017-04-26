@@ -1,0 +1,14 @@
+﻿@model WannabeReddit.Models.Post
+
+
+@*<p>Total Upvotes @Model.UpVotes <a href="~/Home/CountUp?id=@Model.Id&pageNumber=@ViewBag.Pagenumber"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a></p>
+<p>Total Downvotes @Model.DownVotes <a href="~/Home/CountDown?id=@Model.Id&pageNumber=@ViewBag.Pagenumber"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></p>*@
+
+
+
+    
+        <p><i class="glyphicon glyphicon-circle-arrow-up" onclick="upVote(@Model.Id);"></i> - Total upvotes @Model.UpVotes</p>
+    
+   
+        <p><i class="glyphicon glyphicon-circle-arrow-down" onclick="downVote(@Model.Id);"></i> - Total downvotes @Model.DownVotes</p>
+ 

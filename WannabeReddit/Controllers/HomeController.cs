@@ -30,7 +30,7 @@ namespace WannabeReddit.Controllers
             var count = db.Posts.First(f => f.Id == id);
             count.UpVotes++;
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return PartialView("_voteBlock", count);
 
         }
 
@@ -39,7 +39,7 @@ namespace WannabeReddit.Controllers
             var count = db.Posts.First(f => f.Id == id);
             count.DownVotes++;
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return PartialView("_voteBlock", count);
 
         }
 
