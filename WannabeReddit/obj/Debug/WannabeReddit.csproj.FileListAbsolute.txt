@@ -204,3 +204,4 @@ C:\Users\prana\tiy\week-7\day-3\WannabeRedditRefactored\WannabeReddit\obj\Debug\
 C:\Users\prana\tiy\week-7\day-3\WannabeRedditRefactored\WannabeReddit\obj\Debug\WannabeReddit.csproj.GenerateResource.Cache
 C:\Users\prana\tiy\week-7\day-3\WannabeRedditRefactored\WannabeReddit\obj\Debug\WannabeReddit.dll
 C:\Users\prana\tiy\week-7\day-3\WannabeRedditRefactored\WannabeReddit\obj\Debug\WannabeReddit.pdb
+C:\Users\prana\tiy\week-7\day-3\WannabeRedditRefactored\WannabeReddit\obj\Debug\WannabeReddit.Migrations.test.resources
