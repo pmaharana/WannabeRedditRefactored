@@ -58,11 +58,11 @@ namespace WannabeReddit
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "832036306844-ceifemeqdqa94f9ok3ifmfhreheaa49b.apps.googleusercontent.com",
+                ClientSecret = "FHOQcdoFi9Zj3-MRjtcUD-vw"
+            });
         }
     }
 }
